@@ -1,1 +1,1 @@
-console.log('Log from /server/main.js')
+import {Players} frin './../imports/api/players'
