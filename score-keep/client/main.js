@@ -17,12 +17,14 @@ const renderPlayers = function (playersList) {
 
 const handleSubmit = function (e) {
     let playerName = e.target.playerName.value
+    let playerScore = e.target.playerScore.value
     e.preventDefault()
 
     if (playerName) {
         e.target.playerName.value = ''
+        e.target.playerScore.value = ''
 
-        Players.insert({ name: playerName, score: 0 })
+        Players.insert({ name: playerName, score: playerScore })
     }
 }
 
@@ -39,6 +41,17 @@ Meteor.startup(function () {
                         name="playerName"
                         placeholder="Player name"
                     />
+
+                    <br />
+
+                    <input
+                        type="text"
+                        name="playerScore"
+                        placeholder="Player
+                    score"
+                    />
+
+                    <br />
 
                     <button> Add Player </button>
                 </form>
